@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+// import Color from "./Components/Color.js";
+import Welcome from "./Components/Welcome.js";
+// import DayNight from "./Components/DayNight.js";
 
 function App() {
+  let [isMyName, setMyName] = useState("Muhammad Usman Amjad");
+  const changeMyName = () => {
+    setMyName(
+      isMyName === "Muhammad Usman Amjad"
+        ? "Funky Bhai "
+        : "Muhammad Usman Amjad"
+    );
+  };
   return (
     <div>
-      <h1>Hello To the Future..!</h1>
-      <h3>From the other side</h3>
-      <h4>by Usman Amjad</h4>
+      <Welcome myNameIs={isMyName} />
+      <button onClick={() => changeMyName()}> Change My Name</button>
     </div>
   );
 }
