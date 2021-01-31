@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-
-import DayNight from "./Components/DayNight.js";
+ import DayNight from "./DayNight.js"
 
 function Welcome(props) {
   let [isMorning, setTime] = useState(true);
@@ -11,8 +10,10 @@ function Welcome(props) {
   return (
     <div>
       <h1>Welcome Back {props.myNameIs}..!</h1>
-      <DayNight timeIs={isMorning} />
-      <button onClick={() => changeTime()}> changeTime</button>
+      <hr/>
+      <DayNight timeIs={isMorning}  />
+      <hr/>
+      <button onClick={() => changeTime()}> Change Time </button>
     </div>
   );
 }

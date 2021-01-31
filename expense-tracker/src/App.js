@@ -15,7 +15,9 @@ function App() {
   return (
     <div>
       <Welcome myNameIs={isMyName} />
+      <hr/>
       <button onClick={() => changeMyName()}> Change My Name</button>
+      <hr/>
     </div>
   );
 }
