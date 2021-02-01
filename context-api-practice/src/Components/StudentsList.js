@@ -1,13 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StudentContext } from "../Contexts/StudentContext";
+import StudentsDetails from "./StudentsDetails";
 
-function StudentsList() {
-  const value = useContext(StudentContext);
+const StudentsList = () => {
+  const [name, setName] = useState("Ali");
+  const [id, setId] = useState(22235);
+
+  const [students, setStudents] = useContext(StudentContext);
+
+  const addNewName = () => {
+    setStudents(() => [...students, { name: name, uniqueID: id }]);
+  };
+
   return (
     <div>
-      <h1>{value}</h1>
+      {students.map((student) => (
+        <StudentsDetails name={student.name} id={student.uniqueID} />
+      ))}
+      <button onClick={() => addNewName()}> Add New Name</button>
+      <h1>{students.length}</h1>
     </div>
   );
-}
+};
 
 export default StudentsList;

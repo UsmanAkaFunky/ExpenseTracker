@@ -1,14 +1,14 @@
 import React from "react";
 
-import { StudentProvider } from "./Contexts/StudentContext";
+import  GlobalProvider  from "./Contexts/StudentContext";
 import StudentsList from "./Components/StudentsList";
 function App() {
   return (
-    <StudentProvider>
+    <GlobalProvider>
       <div className="App">
-      <StudentsList/>
+        <StudentsList />
       </div>
-    </StudentProvider>
+    </GlobalProvider>
   );
 }
 
